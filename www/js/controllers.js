@@ -1,6 +1,18 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('signatureCtrl', function($scope) {
+  var canvas=document.getElementById('signatureCanvas')
+    $scope.dev_width = canvas.offsetWidth;
+    $scope.dev_height = canvas.offsetHeight;
+  var signaturePad= new SignaturePad(canvas);
+  $scope.clearCanvas=function(){
+    signaturePad.clear();
+  }
+  $scope.saveCanvas=function(){
+    var sigImag=signaturePad.toDataURL();
+    $scope.signatureImage=sigImag;
+  }  
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
