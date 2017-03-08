@@ -29,6 +29,5 @@
   },
   "_source": "https://github.com/szimek/signature_pad.git",
   "_target": "^1.5.3",
-  "_originalSource": "signature_pad",
-  "_direct": true
+  "_originalSource": "signature_pad"
 }

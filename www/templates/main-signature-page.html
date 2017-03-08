@@ -1,4 +1,4 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="sign-docs">
   <ion-content class="padding">
     <h3>sign in the canvas</h3>
     <div id="sigCanvasDiv">
@@ -9,6 +9,12 @@
       <a class="button button-balanced" ng-click="saveCanvas()">Save Signature</a>
     </div>
     <br/>
-    <img ng-src="{{signatureImage}}" alt="signature shown here after saveing"/>
+    <p>{{signatureText}}</p>
+    <div>
+    <p><b>signature by "fromDtatURL()", by image</b></p>
+    <img ng-src="{{signatureImageFromURL}}" alt="signature from URL shown here after saveing"/>
+    <p><b>signature by "fromData()", by Array</b></p>
+    <img ng-src="{{signatureImageFromArrray}}" alt="signature from Array shown here after saveing"/>
+    </div>
   </ion-content>
 </ion-view>
