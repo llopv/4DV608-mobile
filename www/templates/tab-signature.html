@@ -1,7 +1,9 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
     <h3>sign in the canvas</h3>
-    <canvas id="signatureCanvas" width={{dev_width}}px height={{dev_height}}px style="border: 1px solid black;"></canvas>
+    <div id="sigCanvasDiv">
+      <canvas id="signatureCanvas" width={{dev_width}}px height={{dev_height}}px style="border: 1px solid black;"></canvas>
+    </div>
     <div class="button-bar">
       <a class="button button-energized" ng-click="clearCanvas()">Clear Signature</a>
       <a class="button button-balanced" ng-click="saveCanvas()">Save Signature</a>

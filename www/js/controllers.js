@@ -1,9 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('signatureCtrl', function($scope) {
+.controller('signatureCtrl', function($scope,$window) {
+  var theDiv=document.getElementById('sigCanvasDiv')
   var canvas=document.getElementById('signatureCanvas')
-    $scope.dev_width = canvas.offsetWidth;
-    $scope.dev_height = canvas.offsetHeight;
+    $scope.dev_width = theDiv.offsetWidth;
+    $scope.dev_height = theDiv.offsetHeight;
   var signaturePad= new SignaturePad(canvas);
   $scope.clearCanvas=function(){
     signaturePad.clear();
@@ -33,8 +34,19 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('AccountCtrl', function($scope,$location) {
+  $scope.login=function(){
+    console.log('login button pressed');
+  }
+  $scope.goToSignup=function(){
+    console.log('goToSignup button pressed');
+    $location.path('tab/account/signup');
+  }
+  $scope.goToLogin=function(){
+    console.log('got back to login pressed');
+    $location.path('tab/account');
+  }
+  $scope.registerUser=function(){
+    console.log('register the user button pressed');
+  }
 });
