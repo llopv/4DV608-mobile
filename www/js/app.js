@@ -42,6 +42,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   .state('tab.signature', {
     url: '/signature',
+    onEnter: function($state) {
+      if (!localStorage.token)
+        $state.go('tab.account');
+    },
+    views: {
+      'tab-signature': {
+        templateUrl: 'templates/main-signature-page.html',
+        controller: 'signatureCtrl'
+      }
+    }
+  })
+
+  .state('tab.sample', {
+    url: '/sample',
     views: {
       'tab-signature': {
         templateUrl: 'templates/main-signature-page.html',
@@ -66,16 +80,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-account':{
         templateUrl:'templates/signup-page.html',
         controller: 'AccountCtrl'
-      }
-    }
-  })
-
-  .state('tab.sampleSig',{
-    url:'/sample',
-    views:{
-      'tab-sampleSig':{
-        templateUrl:'templates/sampling-signature-page.html',
-        controller:'sampleSigCtrl'
       }
     }
   });

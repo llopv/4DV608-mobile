@@ -1,20 +1,17 @@
 <ion-view view-title="sign-docs">
   <ion-content class="padding">
-    <h3>sign in the canvas</h3>
-    <div id="sigCanvasDiv">
-      <canvas id="signatureCanvas" width={{dev_width}}px height={{dev_height}}px style="border: 1px solid black;"></canvas>
+    <div ng-class="{'hide': !pag_t}">
+      <h3>Sign in the canvas</h3>
+      <div id="sigCanvasDiv">
+        <canvas id="signatureCanvas" width={{dev_width}}px height={{dev_height}}px style="border: 1px solid black;"></canvas>
+      </div>
+      <div class="button-bar">
+        <a class="button button-energized" ng-click="clearCanvas()">Clear Signature</a>
+        <a class="button button-balanced" ng-click="saveCanvas()">Save Signature</a>
+      </div>
+      <p>{{pag_i}}/{{pag_t}}</p>
     </div>
-    <div class="button-bar">
-      <a class="button button-energized" ng-click="clearCanvas()">Clear Signature</a>
-      <a class="button button-balanced" ng-click="saveCanvas()">Save Signature</a>
-    </div>
-    <br/>
-    <p>{{signatureText}}</p>
-    <div>
-    <p><b>signature by "fromDtatURL()", by image</b></p>
-    <img ng-src="{{signatureImageFromURL}}" alt="signature from URL shown here after saveing"/>
-    <p><b>signature by "fromData()", by Array</b></p>
-    <img ng-src="{{signatureImageFromArrray}}" alt="signature from Array shown here after saveing"/>
-    </div>
+    <p ng-class="{'hide': pag_t}">No documents to sign</p>
   </ion-content>
+  
 </ion-view>

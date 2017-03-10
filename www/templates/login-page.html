@@ -1,6 +1,7 @@
 
-<ion-view view-title="login-form" name="login-view">
+<ion-view view-title="Login to EasySign" name="login-view">
   <ion-content class="padding">
+    <form  ng-submit='login()'>
        <div class='list'>
           <label class='item item-input'>
             <input type='email' ng-model='email' placeholder='Email'>
@@ -8,8 +9,9 @@
           <label class='item item-input'>
             <input type='password' ng-model='password' placeholder='Password'>
           </label>
-          <button class="button button-block button-positive" ng-click='login()'>Login</button>
+          <button type="submit" class="button button-block button-positive">Login</button>
           <button class="button button-block button-assertive" ng-click="goToSignup()">Register</button>
       </div>
+    </form>
   </ion-content>
 </ion-view>
